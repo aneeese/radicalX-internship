@@ -1,0 +1,96 @@
+{
+    "internships": [
+        {
+            "internship-description": {
+                "category": ["Web Development", "Project Development", "Design"],
+                "description": "This is internship description",
+                "location": "Islamabad",
+                "benefits": "xyz benefits",
+                "intro-video": "https://intro-video.mp4",
+                "mentor-details": {
+                    "name": "Cyril Almeda",
+                    "profile-photo": "https://profile.png",
+                    "email-address": "cyril32@gmail.com",
+                    "linkedin-url": "https://linkedin"
+                },
+                "recommended-roles": [
+                    "Back-end", "UI-Designer", "Front-end"
+                ],
+                "wlinks": [
+                    "https://mycompany.com",
+                    "https://twitter.com/mycompany"
+                ]
+            },
+            "internship-guide": {
+                "overview": {
+                    "brief": {
+                        "description": "This is brief description",
+                        "video": "https://brief-video.mp4"
+                    },
+                    "requirements": {
+                        "description": "This is requirement description",
+                        "video": "https://requirements-video.mp4"
+                    },
+                    "milestones": {
+                        "description": "This is milestone description",
+                        "video": "https://milestone-video.mp4"
+                    }
+                },
+                "schedule": {
+                    "duration": {
+                        "description": "Duration short description",
+                        "video": "https://duration-video.mp4"
+                    },
+                    "timeline": {
+                        "description": "Short timeline description",
+                        "video": "https://timeline-video.mp4"
+                    },
+                    "deliverables": {
+                        "description": "Deliverables description",
+                        "video": "https://deliverables-video.mp4"
+                    }
+                },
+                "resources": {
+                    "curated-resources": {
+                        "description": "Curated resources description",
+                        "video": "https://curated-resources-video.mp4"
+                    },
+                    "events": {
+                        "description": "Events description",
+                        "video": "https://events-video.mp4"
+                    }
+                }
+            },
+            "surveys": {
+                "survey-1": {
+                    "question-1": "Question?"
+                },
+                "survey-2": {
+                    "question-1": "Question?"
+                }
+            },
+            "settings": {
+                "basic-settings": {
+                    "internship-url": "radicalX-internship-url",
+                    "access": {
+                        "private-internship": "False",
+                        "hidden-internship": "False"
+                    },
+                    "security": {
+                        "disable-text-copying": "False"
+                    }
+                },
+                "hero-image": {
+                    "internship-url": "radicalX-internship-url",
+                    "access": {
+                        "private-internship": "False",
+                        "hidden-internship": "False"
+                    },
+                    "security": {
+                        "disable-text-copying": "False"
+                    }
+                }
+            }
+        }
+    ]
+}
