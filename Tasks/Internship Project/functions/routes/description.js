@@ -1,15 +1,21 @@
 const express = require("express");
+const { validationResult } = require("express-validator");
 const admin = require('firebase-admin');
 const db = admin.firestore();
 const fs = require("fs");
 const path = require("path");
+const validator = require("../validator");
 
 let router = express.Router();
 router.route("/")
     .get((req, res) => {
         res.send("hi get /description")
     })
-    .post(async (req, res) => { 
+    .post(validator.deccription, async (req, res) => {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(400).json({errors: errors.array()})
+        } 
         const description_data = {
             description: {
                 category: req.body.category,
@@ -30,7 +36,7 @@ router.route("/")
         const response = await db.collection("internships").add(description_data);
         // writing the id of current document to a file for later use
         fs.writeFile(path.join(__dirname, "keyFile.txt"), response._path.segments[1], error => { if (error) console.log(error) });
-        res.send(response._path.segments[1]);
+        res.send("Input successfully added to database!");
     });
 
 module.exports = { description: router }

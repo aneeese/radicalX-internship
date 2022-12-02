@@ -1,8 +1,10 @@
 const express = require("express");
+const { validationResult } = require("express-validator");
 const admin = require('firebase-admin');
 const db = admin.firestore();
 const fs = require("fs");
 const path = require("path");
+const validator = require("../validator");
 
 // reading the id of last added document to database for updating document
 const key = fs.readFileSync(path.join(__dirname, "/keyFile.txt"), "utf8");
@@ -13,7 +15,11 @@ router.route("/")
     .get((req, res) => {
         res.send("hi get /guide");
     })
-    .put(async (req, res) => {
+    .put(validator.guide, async (req, res) => {
+        const errors = validationResult(req);
+        if(!errors.isEmpty()) {
+            return res.status(400).json({errors: errors.array()})
+        }
         const response = await db.collection("internships").doc(key).update({
             guide: {
                 overview: {
@@ -56,7 +62,7 @@ router.route("/")
                 }
             }
         })
-        res.send(response);
+        res.send("Input successfully added to database!");
     });
 
 module.exports = { guide: router };
